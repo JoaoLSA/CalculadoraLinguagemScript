@@ -1,11 +1,23 @@
 <html>
-<body>
-    <form id="calculateForm" onsubmit="return validateMyForm(event);">
-        <input id="inputValue" type="number" name="value">
-        <button type="submit">Calculate!</button>
-        <h3>O resultado é igual a: </h3>
-        <h3 id="resultado">0</h3>
-    </form>
+<body><div class="container">
+    <div class="row">
+      <div class="col coluna1">
+      </div>
+      <div class="col coluna2 p-3">
+        <h1>Calculadora do valor ao quadrado!</h1>
+        <div class="p-3">
+            <form id="calculateForm" onsubmit="return validateMyForm(event);">
+                <input id="inputValue" type="number" name="value">
+                <button type="submit">Calculate!</button>
+                <h3>O resultado é igual a: </h3>
+                <h3 id="resultado">0</h3>
+            </form>
+        </div>
+      </div>
+      <div class="col coluna3">
+      </div>
+    </div>
+  </div>
 </body>
 <script type="text/javascript">
     function validateMyForm(e) {
