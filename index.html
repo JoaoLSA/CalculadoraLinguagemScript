@@ -1,0 +1,33 @@
+<html>
+
+<body>
+    <form id="calculateForm" onsubmit="return validateMyForm(event);">
+        <input id="inputValue" type="number" name="value">
+        <button type="submit">Calculate!</button>
+        <h3>O resultado é igual a: </h3>
+        <h3 id="resultado">0</h3>
+    </form>
+</body>
+<script type="text/javascript">
+    function validateMyForm(e) {
+        e.preventDefault()
+        
+        var inputValue = document.getElementById("inputValue").value;
+
+        var url = "http://localhost:3000/calculate?value=" + inputValue;//Sua URL
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url, false);
+        xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+        
+        var result = xhttp.responseText
+
+        console.log(result)
+        document.getElementById("resultado").innerText = result;
+
+        console.log(document.getElementById("resultado").innerText)
+        return true;
+    }
+</script>
+
+</html>
